@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "camelCase": "dashes",
+          "customMatcher": "\\.scss$",
+          "classnameTransform": "camelCaseOnly",
+          "goToDefinition": true,
+          "postcssOptions": {
+            "useConfig": true
+          }
+        }
+      }
+    ],
+    "target": "es2022",
+    "lib": ["dom"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "isolatedModules": true,
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "../node_modules",
+    "**/*.scss"
+  ]
+}
