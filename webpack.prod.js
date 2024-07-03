@@ -1,18 +1,19 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { merge } = require('webpack-merge');
-const commonConfig = require('./webpack.common.js');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('node:path');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+import { merge } from 'webpack-merge';
+import commonConfig from './webpack.common.js';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'node:path';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
-module.exports = merge(commonConfig, {
+const dirname = import.meta.dirname;
+
+export default merge(commonConfig, {
   mode: 'production',
   devtool: 'nosources-source-map',
   module: {
     rules: [
       {
         test: /\.[jt]sx?$/,
-        include: path.join(__dirname, 'src'),
+        include: path.join(dirname, 'src'),
         loader: 'babel-loader',
       },
       {

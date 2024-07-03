@@ -1,6 +1,5 @@
-/* eslint-disable */
 /** @type {import('jest').Config} */
-module.exports = {
+export default {
   coverageDirectory: 'coverage',
   coveragePathIgnorePatterns: ['/node_modules/'],
   moduleNameMapper: {
@@ -9,8 +8,5 @@ module.exports = {
   },
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/src'],
-  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
-  transform: {
-    '\\.[jt]sx?$': 'babel-jest',
-  },
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
 };

@@ -20,6 +20,8 @@
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "isolatedModules": true,

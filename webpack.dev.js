@@ -1,18 +1,19 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('node:path');
+import path from 'node:path';
 
-const { merge } = require('webpack-merge');
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const commonConfig = require('./webpack.common.js');
+import { merge } from 'webpack-merge';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import commonConfig from './webpack.common.js';
 
-module.exports = merge(commonConfig, {
+const dirname = import.meta.dirname;
+
+export default merge(commonConfig, {
   mode: 'development',
   devtool: 'eval',
   module: {
     rules: [
       {
         test: /\.[jt]sx?$/,
-        include: path.join(__dirname, 'src'),
+        include: path.join(dirname, 'src'),
         loader: 'babel-loader',
         options: {
           plugins: ['react-refresh/babel'],

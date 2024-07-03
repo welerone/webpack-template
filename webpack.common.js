@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import path from 'node:path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-const path = require('node:path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dirname = import.meta.dirname;
 
-module.exports = {
+export default {
   entry: {
     main: {
       import: './src/index.tsx',
@@ -26,11 +26,11 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': path.resolve(dirname, 'src'),
     },
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(dirname, 'build'),
     publicPath: '/',
     filename: 'public/js/[name].[contenthash:10].js',
     chunkFilename: 'public/js/[name].[id].[contenthash:10].js',

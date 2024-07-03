@@ -1,6 +1,6 @@
 /** @type {import('postcss-load-config').Config} */
-const config = {
-  plugins: [require('postcss-preset-env')],
-};
+import postCSSPresetEnv from 'postcss-preset-env';
 
-module.exports = config;
+export default {
+  plugins: [postCSSPresetEnv],
+};
